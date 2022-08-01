@@ -1,5 +1,7 @@
 # Neat DNS
 
+[![Docker](https://github.com/ffha/neatdns/actions/workflows/docker.yml/badge.svg)](https://github.com/ffha/neatdns/actions/workflows/docker.yml)
+
 an anti-pollution DNS server
 
 Including the following software:
