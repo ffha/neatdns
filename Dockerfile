@@ -1,6 +1,6 @@
 FROM smartentry/alpine:edge
 
-MAINTAINER Yifan Gao <docker@yfgao.com>
+LABEL org.opencontainers.image.authors="fthasdd@090124.xyz"
 
 ADD .docker $ASSETS_DIR
 
