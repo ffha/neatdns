@@ -20,13 +20,6 @@ build_bind(){
     wget -q -O $BIND_SRC http://downloads.isc.org/isc/bind9/${BIND_VERSION}/bind-${BIND_VERSION}.tar.xz
     tar -C $SRC_DIR -xf $BIND_SRC
     cd $BIND_SRC_DIR
-    for i in bin/named/named.8 bin/check/named-checkconf.8 bin/rndc/rndc.8; do
-        sed -i \
-            -e 's:/etc/named.conf:/etc/bind/named.conf:g' \
-            -e 's:/etc/rndc.conf:/etc/bind/rndc.conf:g' \
-            -e 's:/etc/rndc.key:/etc/bind/rndc.key:g' \
-            "${i}" || return 1
-    done
     sed -i '/#define SOCK_DEAD(s)/a#undef SO_BSDCOMPAT' lib/isc/unix/socket.c
 
     export CFLAGS="$CFLAGS -D_GNU_SOURCE"
